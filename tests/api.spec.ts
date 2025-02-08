@@ -12,7 +12,7 @@ test.describe('REST API Tests', () => {
     objectsApi = new ObjectsApi(request);
   });
 
-  test('should get list of all objects', async () => {
+  test('verify should get list of all objects', async () => {
     const response = await objectsApi.getAllObjects();
     const data = await ApiAssertions.assertSuccessfulResponse(response);
     
@@ -22,7 +22,7 @@ test.describe('REST API Tests', () => {
     await ApiAssertions.assertObjectStructure(data[0]);
   });
 
-  test('should create a new object', async () => {
+  test('verify should create a new object', async () => {
     const testObject = ObjectDataProvider.getTestObject();
     const response = await objectsApi.createObject(testObject);
     const data = await ApiAssertions.assertSuccessfulResponse(response) as ObjectResponse;
@@ -33,7 +33,7 @@ test.describe('REST API Tests', () => {
     createdObjectId = data.id;
   });
 
-  test('should get a single object by ID', async () => {
+  test('verify should get a single object by ID', async () => {
     const testObject = ObjectDataProvider.getTestObject();
     let response = await objectsApi.createObject(testObject);
     let data = await ApiAssertions.assertSuccessfulResponse(response) as ObjectResponse;
@@ -45,7 +45,7 @@ test.describe('REST API Tests', () => {
     await ApiAssertions.assertObjectMatch(data, testObject);
   });
 
-  test('should update an existing object', async () => {
+  test('verify should update an existing object', async () => {
 
     const testObject = ObjectDataProvider.getTestObject();
     let response = await objectsApi.createObject(testObject);
@@ -59,7 +59,7 @@ test.describe('REST API Tests', () => {
     await ApiAssertions.assertObjectMatch(data, updatedObject);
   });
 
-  test('should delete an object', async () => {
+  test('verify should delete an object', async () => {
     const testObject = ObjectDataProvider.getTestObject();
     const response = await objectsApi.createObject(testObject);
     const data = await ApiAssertions.assertSuccessfulResponse(response) as ObjectResponse;
@@ -72,12 +72,12 @@ test.describe('REST API Tests', () => {
     await ApiAssertions.assertErrorResponse(getResponse, 404);
   });
 
-  test('should handle non-existent object gracefully', async () => {
+  test('verify should handle non-existent object gracefully', async () => {
     const response = await objectsApi.getObjectById('non-existent-id');
     await ApiAssertions.assertErrorResponse(response, 404);
   });
 
-  test('should handle delete of non-existent object gracefully', async () => {
+  test('verify should handle delete of non-existent object gracefully', async () => {
     const response = await objectsApi.deleteObject('non-existent-id');
     await ApiAssertions.assertErrorResponse(response, 404);
   });
