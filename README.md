@@ -60,6 +60,12 @@ The test suite covers the following scenarios:
 
 ## Setup
 
+## Clone Git repository
+
+https://github.com/Lahiruhiran/playWrightAssessment/tree/playwrightAeesement
+
+Checout to branch -> playwrightAeesement
+
 1. Install dependencies:
    ```bash
    npm install
