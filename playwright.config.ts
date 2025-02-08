@@ -30,12 +30,14 @@ export default defineConfig({
   
   /* Opt out of parallel tests on CI */
   workers: process.env.CI ? 1 : undefined,
+
+  reporter: process.env.CI ? 'blob' : 'html',
   
-  /* Reporter to use */
-  reporter: [
-    ['html'],
-    ['list'] // Adds a list reporter for CLI output
-  ],
+  // /* Reporter to use */
+  // reporter: [
+  //   ['html'],
+  //   ['list'] // Adds a list reporter for CLI output
+  // ],
   
   /* Shared settings for all the projects below */
   use: {
