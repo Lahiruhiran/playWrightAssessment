@@ -75,15 +75,7 @@ Checkout to branch -> playwrightAeesement
    ```bash
    npx playwright install
    ```
-
-## Running Tests
-
-### Run all tests:
-```bash
-npm test
-```
-
-### Run specific test file:
+### Run test file:
 ```bash
 npx playwright test tests/api.spec.ts
 ```
@@ -91,3 +83,10 @@ npx playwright test tests/api.spec.ts
 ## Test Report
 
 After running the tests, you can find the HTML report in the `playwright-report` directory. Open `playwright-report/index.html` in your browser to view the detailed test results.
+
+OR
+
+Execute  
+```bash 
+npx playwright show-report 
+```
