@@ -32,7 +32,7 @@ export class ApiAssertions {
   
   }
 
-  static async assertObjectMatch(actual: ObjectResponse, expected: any) {
+  static async assertObjectMatch(actual: ObjectResponse, expected: Partial<ObjectResponse>) {
     expect(actual.name).toBe(expected.name);
     expect(actual.data).toEqual(expected.data);
   }

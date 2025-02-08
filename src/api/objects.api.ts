@@ -1,6 +1,5 @@
 import { APIRequestContext, APIResponse } from '@playwright/test';
-import { CreateObjectRequest, UpdateObjectRequest } from '../types/request.types';
-import { ObjectResponse, ObjectListResponse } from '../types/response.types';
+import { CreateObjectRequest } from '../types/request.types';
 
 export class ObjectsApi {
   constructor(private request: APIRequestContext) {}
