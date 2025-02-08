@@ -77,11 +77,6 @@ The test suite covers the following scenarios:
 npm test
 ```
 
-### Run tests with UI mode:
-```bash
-npm run test:ui
-```
-
 ### Run specific test file:
 ```bash
 npx playwright test tests/api.spec.ts
